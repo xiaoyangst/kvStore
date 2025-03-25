@@ -18,9 +18,13 @@ add_executable(SafeQueueTest SafeQueueTest.cpp)
 target_link_libraries(SafeQueueTest PRIVATE GTest::GTest GTest::Main pthread)
 target_include_directories(SafeQueueTest PRIVATE ${CMAKE_SOURCE_DIR}/src)
 
+add_executable(ThreadPoolTest ThreadPoolTest.cpp)
+target_link_libraries(ThreadPoolTest PRIVATE GTest::GTest GTest::Main pthread)
+target_include_directories(ThreadPoolTest PRIVATE ${CMAKE_SOURCE_DIR}/src)
 
 # 注册测试
 include(GoogleTest)
 gtest_discover_tests(ConfigTest)
 gtest_discover_tests(LogTest)
 gtest_discover_tests(SafeQueueTest)
+gtest_discover_tests(ThreadPoolTest)
